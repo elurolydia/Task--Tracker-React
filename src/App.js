@@ -29,6 +29,12 @@ const App = () => {
         text: 'Push Code to Git',
         day: 'Sept 7th at 10:36pm',
         reminder: false,
+    },
+    {
+        id: 5,
+        text: 'Added one more task',
+        day: 'Sept 7th at 10:36pm',
+        reminder: false,
     } 
 ])
 
