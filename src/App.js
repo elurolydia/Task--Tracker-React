@@ -23,8 +23,21 @@ const App = () => {
         text: 'Food Shopping',
         day: 'Feb 5th at 2:30pm',
         reminder: false,
+    } ,
+    {
+        id: 4,
+        text: 'Push Code to Git',
+        day: 'Sept 7th at 10:36pm',
+        reminder: false,
     } 
 ])
+
+//Add Task
+const addTask = (task) => {
+  const id = Math.floor(Math.random() * 10000)
+  const newTask = {id, ...task}
+  setTasks([...tasks, newTask])
+}
 
 //Delete Task
 const deleteTask = (id) => {
@@ -44,7 +57,7 @@ const togglReminder = (id) => {
   return (
     <div className="container">
       <Header />
-      <AddTask />
+      <AddTask onAdd = {addTask}/>
       {tasks.length > 0 ? 
       <Tasks  tasks = {tasks} onDelete = {deleteTask} onToggle = {togglReminder}/> : 
       'No Tasks To Show'
